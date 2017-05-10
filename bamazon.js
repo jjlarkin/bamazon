@@ -30,14 +30,16 @@ let start = function() {
         message: "Select item to purchase",
         choices: ["cupcake", "icecreamcake", "tastyCake"]
     }).then(function(answer) {
-        // based on their answer, either call the bid or the post functions
+
         if (answer.itemSelect === "cupcake") {
 connection.query("UPDATE products SET stock_quantity=stock_quantity-1 WHERE product_name =?",[answer.itemSelect])
             displayInv();
         } else if(answer.itemSelect === "icecreamcake") {
-
+            connection.query("UPDATE products SET stock_quantity=stock_quantity-1 WHERE product_name =?",[answer.itemSelect])
+            displayInv();
         }else if(answer.itemSelect === "tastycake"){
-
+            connection.query("UPDATE products SET stock_quantity=stock_quantity-1 WHERE product_name =?",[answer.itemSelect])
+            displayInv();
         }
     });
 };
